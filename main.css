@@ -1,0 +1,128 @@
+/* Fonts */
+
+@font-face {
+  font-family: built-titling;
+  src: url(/fonts/built\ titling\ bd.ttf);
+}
+
+@font-face {
+  font-family: playfair-display;
+  src: url(/fonts/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: bahnschrift;
+  src: url(/fonts/bahnschrift.ttf);
+}
+
+/* FadeIn animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease forwards;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #b5e0ed;
+  overflow-x: hidden;
+}
+
+div {
+  margin: 0;
+}
+
+/* Header stuff*/
+header {
+  padding: 30px;
+}
+
+header a {
+  font-family: bahnschrift;
+  font-size: 32px;
+  color: #00393c;
+  text-decoration: none;
+}
+
+.sticky-header {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background-color: #fff6de;
+  color: #002626;
+  padding: 30px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Home divs */
+#home-div-1 {
+  background-color: #b5e0ed;
+  width: auto;
+  height: 500px;
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#home-div-1 h1 {
+  font-family: built-titling;
+  font-size: 136px;
+  margin: 0;
+  color: #398481;
+  margin: 0px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 1.5s ease;
+}
+
+#home-div-1 h2 {
+  font-family: playfair-display;
+  font-size: 32px;
+  color: #398481;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 1.5s ease;
+}
+
+#home-div-2 {
+  background-color: #002626;
+  width: auto;
+  height: 500px;
+  padding: 200px;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Images */
+
+.transition-img {
+  width: 100%;
+  user-select: none;
+}
+
+.lines-img {
+  transform: rotate(13deg);
+  user-select: none;
+  width: 120%;
+}
