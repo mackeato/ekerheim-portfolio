@@ -40,7 +40,11 @@ body {
 }
 
 div {
-  margin: 0;
+  margin: -10px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Header stuff*/
@@ -64,7 +68,6 @@ header a {
   padding: 30px;
   z-index: 1000;
   display: flex;
-  position: absolute;
   justify-content: space-around;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -128,6 +131,17 @@ header a {
   row-gap: 2em;
 }
 
+#portfolio-wrap-wrap {
+  background: #002626;
+  color: #fff6de;
+  font-family: playfair-display;
+  font-size: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+}
+
 .portfolio-thumb {
   background-color: #00393c;
   height: 20em;
@@ -136,18 +150,44 @@ header a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  cursor: pointer;
 }
 
 .thumb-1 {
   background-image: url(images/963singer.jpg);
+  background-size: 100%;
+  background-color: rgb(176, 135, 0);
 }
 .thumb-2 {
   background-image: url(images/canenbrew-big.png);
   background-position: 50% 35%;
 }
 .thumb-3 {
+  background-image: url(images/rummel-logo.png);
+  background-color: #ffd49f;
+  background-size: 45%;
 }
 .thumb-4 {
+  background-image: url(images/carcoffeegastein-01.png);
+
+  background-position: 50% 60%;
+}
+
+.thumb-5 {
+  background-image: url(images/tapimg.png);
+  background-position: 50% 100%;
+  background-size: 110%;
+}
+
+.thumb-6 {
+  background-image: url(images/friskluft.png);
 }
 
 #home-div-3 {
@@ -216,6 +256,34 @@ header a {
   color: #398481;
 }
 
+/* Contact divs */
+
+#home-div-4 {
+  background-color: #398481;
+  width: auto;
+  height: 500px;
+  padding-top: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-div {
+  color: #fff6de;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-div h1 {
+  font-family: playfair-display;
+  font-size: 5em;
+}
+.contact-div h2 {
+  font-family: bahnschrift;
+  font-size: 2em;
+}
+
 /* Images */
 
 .transition-img {
@@ -238,4 +306,45 @@ header a {
 #me-again2 {
   width: 40%;
   height: auto;
+}
+
+/* Modal */
+#modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1000;
+}
+
+/* Modal */
+#modal {
+  background-color: #00393c;
+  color: #fff6de;
+  font-family: bahnschrift;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 1200px;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+  position: absolute;
+}
+
+/* Modal Content */
+#modal-content img,
+#modal-content video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Hidden class */
+.hidden {
+  display: none;
 }
