@@ -2,17 +2,17 @@
 
 @font-face {
   font-family: built-titling;
-  src: url(/fonts/built\ titling\ bd.ttf);
+  src: url(fonts/built-titling-bd.ttf);
 }
 
 @font-face {
   font-family: playfair-display;
-  src: url(/fonts/PlayfairDisplay-VariableFont_wght.ttf);
+  src: url(fonts/PlayfairDisplay-VariableFont_wght.ttf);
 }
 
 @font-face {
   font-family: bahnschrift;
-  src: url(/fonts/bahnschrift.ttf);
+  src: url(fonts/bahnschrift.ttf);
 }
 
 /* FadeIn animation */
@@ -330,7 +330,6 @@ header a {
   border-radius: 10px;
   padding: 20px;
   max-width: 1200px;
-  max-height: 800px;
   width: 90%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   overflow: auto;
