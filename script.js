@@ -19,6 +19,7 @@ portfolioThumbs.forEach((thumb) => {
     const description = event.currentTarget.dataset.description;
     const type = event.currentTarget.dataset.type;
     const url = event.currentTarget.dataset.url;
+    const modalClass = event.currentTarget.dataset.class;
 
     // Update modal title and description
     modalTitle.textContent = title;
@@ -43,6 +44,9 @@ portfolioThumbs.forEach((thumb) => {
     // Position modal based on scroll position
     const scrollY = window.scrollY;
     modal.style.top = `${scrollY + 20}px`;
+
+    // Apply the unique class to the modal
+    modal.className = `modal ${modalClass}`;
 
     // Display the modal overlay
     modalOverlay.style.display = "flex";
