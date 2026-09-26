@@ -53,22 +53,6 @@ const PROJECTS = [
     ],
   },
   {
-    id: "rummel",
-    title: "Rummel",
-    type: "Identity & social",
-    summary:
-      "An identity for RUMMEL, a brasserie serving modern European classics with a twist. The stacked, tilted wordmark breaks apart across the launch posts, so the Instagram grid spells out the name: RU, MM, EL.",
-    meta: {
-      Role: "Wordmark, social launch",
-      Tools: "Illustrator, Photoshop",
-      Context: "Concept",
-    },
-    blocks: [
-      { type: "image", src: "assets/img/rummel-instagram.webp", w: 1680, h: 844, alt: "Instagram mockups for RUMMEL: the profile, plus three food posts overlaid with the letters RU, MM and EL in orange and yellow." },
-      { type: "image", src: "assets/img/rummel-logo.webp", w: 900, h: 1235, narrow: true, bg: "#ffd49f", alt: "The RUMMEL wordmark, stacked and set on a diagonal." },
-    ],
-  },
-  {
     id: "cars-and-coffee",
     title: "Cars & Coffee, Bad Gastein",
     type: "Event poster",

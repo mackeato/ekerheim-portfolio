@@ -23,7 +23,7 @@ images/, videos/, fonts/   Original full-resolution source files
 3. Add an entry with the same `id` to `PROJECTS` in `script.js`. Blocks can be `image`, `pair`, `video`,
    `palette`, `compare` (before/after slider) or `note`.
 
-Projects are deep-linkable, e.g. `/#work/rummel`.
+Projects are deep-linkable, e.g. `/#work/cane-and-brew`.
 
 ## Contact
 

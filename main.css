@@ -1119,6 +1119,10 @@ em {
   grid-column: span 7;
 }
 
+.work-card--full {
+  grid-column: 1 / -1;
+}
+
 /* Stagger rows so the grid feels composed, not stacked. */
 .work-card:nth-child(2) {
   margin-top: clamp(0rem, 8vw, 7rem);
@@ -1128,7 +1132,7 @@ em {
   margin-top: clamp(-4rem, -4vw, 0rem);
 }
 
-.work-card:nth-child(5) {
+.work-card:nth-child(4) {
   margin-top: clamp(0rem, 6vw, 5rem);
 }
 
@@ -1145,6 +1149,10 @@ em {
   aspect-ratio: 16 / 10;
 }
 
+.work-card--full .work-card__media {
+  aspect-ratio: 16 / 9;
+}
+
 .work-card__media img,
 .work-card__media video {
   position: absolute;
@@ -1153,15 +1161,6 @@ em {
   height: 100%;
   object-fit: cover;
   transition: transform 1.2s var(--ease), filter 0.6s;
-}
-
-.work-card__media img.contain {
-  object-fit: contain;
-  padding: 8%;
-}
-
-.work-card__media img.contain--small {
-  padding: 14%;
 }
 
 .work-card__media::after {
@@ -2050,13 +2049,15 @@ em {
   }
 
   .work-card,
-  .work-card--wide {
+  .work-card--wide,
+  .work-card--full {
     grid-column: auto;
     margin-top: 0 !important;
   }
 
   .work-card__media,
-  .work-card--wide .work-card__media {
+  .work-card--wide .work-card__media,
+  .work-card--full .work-card__media {
     aspect-ratio: 4 / 3;
   }
 
