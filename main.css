@@ -51,6 +51,7 @@
   --sky: #b5e0ed;
   --cream: #fff6de;
   --paper: #f7eed4;
+  --mist: #dbe3d2;
 
   --display: "Built Titling", "Bebas Neue", "Oswald", Impact, sans-serif;
   --serif: "Playfair Display", Georgia, "Times New Roman", serif;
@@ -1082,7 +1083,7 @@ em {
 
 .work {
   position: relative;
-  padding-block: clamp(4rem, 10vw, 8rem) clamp(5rem, 12vw, 10rem);
+  padding-block: clamp(4rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem);
   background: linear-gradient(var(--ink), #001c1c);
   color: var(--cream);
 }
@@ -1275,13 +1276,24 @@ em {
   overflow: hidden;
 }
 
-.about__waves {
-  width: 130%;
-  max-width: none;
-  margin: clamp(-1rem, -2vw, 0rem) 0 clamp(2rem, 6vw, 5rem) -15%;
-  transform: rotate(-4deg);
+.waves {
+  display: block;
+  width: 100%;
+  height: clamp(110px, 13vw, 230px);
+  margin: -1px 0 clamp(2.5rem, 7vw, 6rem);
+  overflow: visible;
   pointer-events: none;
-  user-select: none;
+}
+
+/* Matches the bottom of the Work gradient so the section edge follows the waves. */
+.waves__fill {
+  fill: #001c1c;
+}
+
+.waves__line {
+  fill: none;
+  stroke-width: 47;
+  stroke-linecap: round;
 }
 
 .about__grid {
@@ -1373,11 +1385,11 @@ em {
 }
 
 .ai .kicker {
-  color: var(--sky);
+  color: var(--sage);
 }
 
 .ai .display em {
-  color: var(--sky);
+  color: var(--sage);
 }
 
 .ai__head {
@@ -1388,7 +1400,7 @@ em {
 }
 
 .ai__lead {
-  color: color-mix(in srgb, var(--cream) 85%, transparent);
+  color: var(--cream);
   font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem);
   line-height: 1.5;
 }
@@ -1416,7 +1428,7 @@ em {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--sky);
+  background: var(--sage);
 }
 
 .ai__stack .ai__more {
@@ -1478,21 +1490,21 @@ em {
 
 .ai__flow p {
   max-width: 28ch;
-  color: color-mix(in srgb, var(--cream) 72%, transparent);
+  color: var(--mist);
   font-size: 0.98rem;
 }
 
 .ai__flow .ai__flow--ai {
-  border-top-color: var(--sky);
+  border-top-color: var(--sage);
 }
 
 .ai__flow .ai__flow--ai::before {
-  background: var(--sky);
-  box-shadow: 0 0 0 5px color-mix(in srgb, var(--sky) 25%, transparent);
+  background: var(--sage);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--sage) 25%, transparent);
 }
 
 .ai__flow--ai .ai__who {
-  background: var(--sky);
+  background: var(--sage);
   color: var(--ink);
 }
 
@@ -1505,7 +1517,7 @@ em {
 
 .ai__subhead {
   margin-bottom: 1.25rem;
-  color: var(--sky);
+  color: var(--sage);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -1532,7 +1544,7 @@ em {
 }
 
 .ai__rules dd {
-  color: color-mix(in srgb, var(--cream) 75%, transparent);
+  color: var(--mist);
 }
 
 .ai__practice ul {
@@ -1564,7 +1576,7 @@ em {
 }
 
 .ai__practice span {
-  color: color-mix(in srgb, var(--cream) 75%, transparent);
+  color: var(--mist);
   font-size: 0.98rem;
 }
 
