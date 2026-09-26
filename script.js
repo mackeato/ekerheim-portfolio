@@ -142,8 +142,9 @@ function placeCow() {
   cowHit.style.transform = `translate(${x - 6}px, ${y - 6}px)`;
   cowHit.style.width = `${r.width + 12}px`;
   cowHit.style.height = `${r.height + 12}px`;
-  moo.style.left = `${x + r.width * 0.8}px`;
-  moo.style.top = `${y - 36}px`;
+  // Bubble floats up and to the right, clear of the cow.
+  moo.style.left = `${x + r.width + 10}px`;
+  moo.style.top = `${y - 46}px`;
 }
 
 const MOOS = ["Moo.", "Mooo!", "Hej hej.", "You found me.", "Hire Markus. Moo."];
@@ -529,7 +530,7 @@ $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 /* Hello, fellow developer ---------------------------------------------------- */
 
 console.log(
-  "%cHej! 👋%c\nThis site is hand-built: no frameworks, no templates.\nLike what you see? markus.ekerheim@gmail.com",
+  "%cHej! 👋%c\nNo frameworks, no templates. Designed by me, pair-programmed with Claude.\nLike what you see? markus.ekerheim@gmail.com",
   "font: 700 24px/1.4 sans-serif; color: #398481",
   "font: 14px/1.5 sans-serif; color: inherit"
 );
