@@ -2,131 +2,414 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Markus Ekerheim — Designer, developer &amp; founder</title>
+    <meta
+      name="description"
+      content="Portfolio of Markus Ekerheim — brand identity, editorial design, web development, motion and photo work. CEO &amp; co-owner of Luftix Nordic AB."
+    />
+    <meta name="author" content="Markus Ekerheim" />
+    <meta name="theme-color" content="#b5e0ed" />
+    <link rel="canonical" href="https://mackeato.github.io/ekerheim-portfolio/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Markus Ekerheim — Designer, developer &amp; founder" />
+    <meta
+      property="og:description"
+      content="Brand identity, editorial, web, motion and photo work — and the story of relaunching Luftix."
+    />
+    <meta property="og:url" content="https://mackeato.github.io/ekerheim-portfolio/" />
+    <meta property="og:image" content="https://mackeato.github.io/ekerheim-portfolio/assets/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+    <link rel="preload" href="assets/fonts/built-titling-bd.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/bahnschrift.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="main.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Markus Ekerheim",
+        "jobTitle": "Designer, developer and CEO",
+        "worksFor": { "@type": "Organization", "name": "Luftix Nordic AB", "url": "https://luftix.se" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Jönköping University" },
+        "email": "mailto:markus.ekerheim@gmail.com",
+        "url": "https://mackeato.github.io/ekerheim-portfolio/",
+        "address": { "@type": "PostalAddress", "addressCountry": "SE" }
+      }
+    </script>
   </head>
-  <body class="fade-in">
-    <header class="sticky-header">
-      <a href="#home-div-1">Home</a>
-      <a href="#about">About Me</a>
-      <a href="#skills">Skills</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="progress" aria-hidden="true"><span></span></div>
+
+    <!-- ───────────── Navigation ───────────── -->
+    <header class="nav" data-theme="light">
+      <a class="nav__logo" href="#top" aria-label="Markus Ekerheim — back to top">
+        <span>M</span><span>E</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#now">Now</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav__cta">Let's talk</a>
+      </nav>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
     </header>
-    <div id="home-div-1">
-      <h1>PORTFOLIO</h1>
-      <h2>of Markus Ekerheim</h2>
-      <img src="images/lines.png" alt="" class="lines-img" />
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav aria-label="Mobile">
+        <a href="#now"><small>00</small>Now</a>
+        <a href="#work"><small>01</small>Work</a>
+        <a href="#about"><small>02</small>About</a>
+        <a href="#contact"><small>04</small>Contact</a>
+      </nav>
+      <a class="mobile-menu__mail" href="mailto:markus.ekerheim@gmail.com">markus.ekerheim@gmail.com</a>
     </div>
-    <div id="home-div-3">
-      <img src="images/me-again2.png" alt="" id="me-again2" />
-      <img src="images/thisisme2.png" alt="" id="thisisme" />
-    </div>
-    <section id="about">
-      <div id="home-text-wrap-1">
-        <div id="home-text-1">
-          <h1>
-            I am a New Media Design student in Jönköping with experience in
-            a little bit of this, aswell as in a bit of that.
-            <br />
-            <br />
-            While my journey began in photoshop, I am familiar with many other
-            adobe programs. In third place comes the programming part of web
-            development, I built this portfolio from scratch so that is
-            something!
+
+    <main id="main">
+      <!-- ───────────── Hero ───────────── -->
+      <section class="hero" id="top" data-nav="light">
+        <div class="hero__content">
+          <p class="hero__eyebrow reveal">
+            <span>Designer</span><span aria-hidden="true">✦</span><span>Developer</span
+            ><span aria-hidden="true">✦</span><span>Founder</span>
+          </p>
+          <h1 class="hero__title" aria-label="Markus Ekerheim">
+            <span class="hero__line" aria-hidden="true"><span>Markus</span></span>
+            <span class="hero__line" aria-hidden="true"><span>Ekerheim</span></span>
           </h1>
-        </div>
-      </div></section
-    >
-    <section id="skills">
-      <div class="crew-wrap-wrap">
-        <div class="cred-wrap">
-          <img src="images/Icons/html-5.png" alt="" />
-          <img src="images/Icons/css-3.png" alt="" />
-          <img src="images/Icons/js.png" alt="" />
-        </div>
-        <div class="cred-wrap">
-          <img src="images/Icons/photoshop.png" alt="" />
-          <img src="images/Icons/illustrator.png" alt="" />
-          <img src="images/Icons/indesign.png" alt="" />
-          <img src="images/Icons/premiere-pro.png" alt="" />
-          <img src="images/Icons/after-effects.png" alt="" />
-        </div></div
-    ></section>
-
-    <div>
-      <img src="images/bg-transish-01.png" alt="" class="transition-img" />
-    </div>
-    <section id="portfolio">
-      <div id="portfolio-wrap-wrap"><h1>Portfolio</h1></div>
-
-      <div id="home-div-2">
-        <div id="portfolio-wrap">
-          <div
-            class="portfolio-thumb thumb-1"
-            data-title="Porsche inspired Coffee table book"
-            data-description="This is from a school-assignment about creating two spreads for a coffee table book about any topic. I do not own rights to the images or the text involved, I only made the layout design and some photoshop work."
-            data-type="image"
-            data-url="images/porsches2.png"
-          ></div>
-          <div
-            class="portfolio-thumb thumb-2"
-            data-title="Cane & Brew Moodboard"
-            data-description="Here we have another school assignment, it was about creating a brand and moodboard for a café. Illustrator and inDesign was used here."
-            data-type="image"
-            data-url="images/caneandbrewmoodboard.png"
-          ></div>
-          <div
-            class=""
-            data-title=""
-            data-description=""
-            data-type=""
-            data-url=""
-          ></div>
-          <div
-            class="portfolio-thumb thumb-4"
-            data-title="Cars&Coffee Event poster"
-            data-description="This is an event poster for a premium Cars&Coffee event in Bad Gastein, made with illustrator and photoshop."
-            data-type="image"
-            data-url="images/carcoffeegastein-01.png"
-          ></div>
-          <div
-            class="portfolio-thumb thumb-5"
-            data-title="Product showcase for Bitburger 5L"
-            data-description="This was a short film we should create, so I choose to film a beer keg I had at home on an iPhone 11 Pro and edit with AfterEffects. I recommend you put it in fullscreen to watch. It is filmed for TikTok format, that is why it is vertical."
-            data-type="video"
-            data-url="videos/the-tap-fin.mp4"
-            data-class="bitburger-modal"
-          ></div>
-          <div
-            class="portfolio-thumb thumb-6"
-            data-title="A fun little photoshop, because I felt like it"
-            data-description="This is is just a photoshop I did of a picture I took in Vietnam. The first image is the raw image, the second is the retouched version, and the third is completely reimagined."
-            data-type="image"
-            data-url="images/taluft.png"
-          ></div>
-        </div>
-
-        <div id="modal-overlay" class="hidden">
-          <div id="modal" >
-            <h2 id="modal-title"></h2>
-            <div id="modal-content"></div>
-            <p id="modal-description"></p>
+          <p class="hero__lead reveal">
+            I design brands, build websites and — lately — <em>run the business behind them.</em>
+          </p>
+          <div class="hero__actions reveal">
+            <a class="btn btn--dark" href="#work">See the work <span aria-hidden="true">↓</span></a>
+            <a class="status" href="#now">
+              <span class="status__dot" aria-hidden="true"></span>
+              Now: CEO &amp; co-owner at Luftix
+            </a>
           </div>
         </div>
+
+        <!-- Landscape: my own illustration, rebuilt as vector layers so it can move -->
+        <svg
+          class="landscape"
+          viewBox="0 0 1600 900"
+          preserveAspectRatio="xMaxYMax slice"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <g class="layer" data-depth="0.62"><circle class="sun" cx="1344.9" cy="350.1" r="47.7" fill="#fff6de" /></g>
+          <g class="layer" data-depth="0.42"><path fill="#87b6b6" d="M0 466.2 L36.6 471.4 L43.8 473.4 L93.6 501.3 L130.8 506.8 L315.7 540.8 L323.5 541.8 L331.3 540.9 L337.9 538.8 L382.3 520.4 L390.7 518.4 L398.5 518.4 L424.3 524.3 L549.7 555.8 L559.9 556.8 L597.7 557.4 L643.4 559.2 L652.4 559.2 L773.0 550.3 L927.8 516.3 L935.0 515.4 L1041.9 522.6 L1051.5 522.6 L1174.5 501.9 L1189.5 495.1 L1194.9 493.5 L1203.9 492.6 L1218.9 494.4 L1266.3 486.6 L1434.4 484.8 L1438.6 484.2 L1479.4 484.2 L1540.0 495.6 L1600.0 487.2 L1600 1500 L0 1500 Z" /></g>
+          <g class="layer" data-depth="0.32">
+            <path fill="#6dacab" d="M0 466.4 L37.8 471.9 L46.8 475.0 L164.4 543.2 L174.0 546.9 L369.1 568.8 L378.1 567.9 L383.5 566.3 L420.1 551.1 L441.7 550.8 L524.5 562.5 L661.4 604.6 L671.0 606.6 L680.6 606.1 L827.0 581.1 L1002.3 534.9 L1010.7 534.0 L1072.5 544.8 L1084.5 544.5 L1089.9 543.0 L1101.3 537.8 L1186.5 496.6 L1193.7 494.1 L1199.1 493.2 L1206.3 493.2 L1226.1 496.1 L1362.3 518.5 L1374.9 519.6 L1600.0 487.5 L1600 1500 L0 1500 Z" />
+            <image class="cow" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABgCAYAAADVenpJAAAFUUlEQVR42u2dP2wURxTGP18INgUSAgqkCxRgISsNBPGn4FIRSAOyqfjTWUkHLhGpoEZKF9OBKMFV9pSG5LBScBYSIE5u4CJZKTidlOJwFSk2TVLcWExWe7dv1ju7MzvfJ512b/fM7r73mzfvze4OEzh6FFS4qtEEBIAiABQBoAgARQAoAkARAIoAUASAIgAUAaAqrR00QSmqA2gA2J+wL1LLfhEnMsG7gdY1CWAOwCyAywCmDP62B6ANoAlgKQYQNIjOxmC6BGDTdQD0VjCrts0AOCj8+5a23gbwQbWevgNOPwbge3VdB0s4/gaAXS4CcAXAbQBfFWCA56rldNWnb7GFzyhnzxVwbVJ9A2DZhRygDuARgPMFXvyUOt6oY3YADGLbmsJ/e58WuVxxdpJmJADYjACTAH4p2PHUJz0GcL2sCHAOwDP6oFTtL2sc4Aad749qFlr+Is0aJgCTbPlhA/CC5nRKzSIBuOJ4SRSiBpIf5VUG/gOzIU7Kvr6AYPArjwhwh873V3lEgH9pRkd9W0AO8BPtHHYEYOsPOALc0NY7tLdzqtsG4Ee17AF4SHv7qaw3g45pmf8tmjE8AG5r60vScEO5p6xdwDW1fEwTOqs5WwCc09a3+v4B7e2c9tkCQCdr65GjTdrbOTVsAbD1BG+LNi5cHQwf9lxU1VfhOcAkPj3m3Ew4OcqeWgBOqKi7AOAQhoM9xwHcVPt7Wml+z0YVoIeVKLaPeYA9LSqnJ2lVfe4XEQHOauvxW41t+sla2F9wpQxsaCEmrg/0lRVdcmkc4Gu17Cbsi+grK6G/7xIAUyMSQMCNd/KqpgXbBzABoM6Er/CsHy4BIEn4ODaQny64BsDMNsCgzHSzqAPlDcAf9F0uid99FwGQJHyMANvT3SISP115vx3MSiC7RBM6uA4AZa4NANNlNZ6sXUC97PKlQs7fU2bkNAFgVlv/gb7LRRdR8rMUJgC0hWVKFSuBjoXS7GoZff52AFgRdgPdCji8p8qx4xjecz+hSrONHI+x5MKFmiSBy8oAW/cDBhVr4RGG9zhWx/zuOfKZ9MqZh2dMq4CLGM4C0oO/zwF2VDRrq49JAtbOCYCHvgKwrMKiSZhvoZyp4loqSq0gv8kiV3I6t8hXAJASIpPUVMQ/MXReM4NBB5YjUxr4Pcimhu37DEDWhOc7g0hwKwNoRSjNcfNInyjLqXESG/MEjrofYHJ700XnpyVwHWFZ16w6AOOqA8kcgj24rW5KftDK2EAqA8A4LfjWQgwSwa7w/FdDBkASBSLHAWinnHfkU3QrA4AHglLTxy5gIEgUuyEAkDZL9SpGD6n68Lr5pmB7y5fuzQYAkrdSfx6x3ZepZtKGcps+JIBldQHjEqllTwDoptT2UchdgESRZ7W/FGCk5AGbIQLwecK2zxK2/e4RAO8E19Mx7DYqA8DulO8A8D5h27pHAPwd+74z4TdvfLi+WkEtXqJXHgHwMvb9tSAC9EIBQNqy/4p9PwV/tS4A+s9QARjVstfgt3SA9wqiBEIFQKq9ngGgA3xyxG8+hgiA1JHxfvMkqic9ChwOBQCpI9dRfemQT7ML+L9+jX1vVBCAdQIgL6WqKB3yAwQgvRQ8XXEgTocIwJGKRgFJSI9f37chAjDOUL+5bqAxOpChZV9lFzA+ETzsaTTYOWbfW239SwincfcZgIaBU9diecC0Jw43OU+9EvgIx4a8aw4Y66mHSaDJqOU8hm8YT2A42/pTly7ExptBZ9TylDLUmsBA8x6G/TvC3zl9zyOv/zya8lQ1moAAUASAIgAUAaAIAEUAKAJAEQAqDP0HB5jxhMoMay0AAAAASUVORK5CYII=" x="422.99" y="539.4" width="19.2" height="14.4" />
+          </g>
+          <g class="layer" data-depth="0.22"><path fill="#398481" d="M0 484.2 L9.6 484.2 L19.2 485.7 L25.8 487.8 L34.2 492.1 L100.2 534.9 L157.2 581.2 L233.5 608.1 L541.9 634.2 L562.9 634.2 L567.1 633.6 L743.6 633.6 L747.8 633.0 L786.2 633.0 L1095.9 564.3 L1177.5 547.2 L1188.3 547.2 L1272.3 558.3 L1281.3 561.1 L1356.3 590.9 L1358.7 591.3 L1361.1 590.2 L1394.1 562.2 L1456.6 529.6 L1465.6 525.6 L1473.4 523.6 L1481.2 522.6 L1588.6 511.2 L1595.2 510.6 L1600.0 511.0 L1600 1500 L0 1500 Z" /></g>
+          <g class="layer" data-depth="0.1"><path fill="#00393c" d="M0 630.0 L127.2 612.1 L163.8 605.4 L172.8 605.4 L183.6 607.8 L239.5 629.7 L424.3 669.3 L446.5 672.6 L677.0 685.2 L798.8 687.0 L803.0 687.6 L834.8 687.6 L1161.9 670.8 L1269.3 659.4 L1274.7 658.5 L1284.9 654.9 L1290.9 651.3 L1391.7 564.3 L1406.2 556.0 L1463.2 526.8 L1471.6 524.2 L1478.8 523.2 L1591.6 511.2 L1600.0 511.2 L1600 1500 L0 1500 Z" /></g>
+          <g class="layer" data-depth="0"><path fill="#002626" d="M0 633.6 L77.4 645.9 L91.8 650.6 L150.6 671.2 L254.5 721.4 L264.7 725.1 L271.9 725.9 L380.5 719.4 L386.5 720.3 L480.1 746.1 L486.1 747.0 L501.7 745.3 L632.0 724.8 L768.2 712.8 L777.8 712.8 L787.4 715.2 L851.0 740.2 L856.4 741.9 L863.0 742.8 L1067.1 720.6 L1239.9 746.5 L1247.7 747.2 L1383.3 725.5 L1484.8 675.0 L1589.2 645.3 L1600.0 644.4 L1600 1500 L0 1500 Z" /></g>
+        </svg>
+        <button class="cow-hit" type="button" aria-label="A cow. Say hi?"></button>
+        <span class="moo" role="status" aria-live="polite"></span>
+
+        <a class="scroll-cue" href="#now" aria-label="Scroll down"><span></span></a>
+      </section>
+
+      <!-- ───────────── Marquee ───────────── -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Brand identity</span><i>✦</i><span>Editorial</span><i>✦</i><span>Web development</span><i>✦</i
+          ><span>E-commerce</span><i>✦</i><span>Motion</span><i>✦</i><span>Retouching</span><i>✦</i
+          ><span>Performance marketing</span><i>✦</i>
+          <span>Brand identity</span><i>✦</i><span>Editorial</span><i>✦</i><span>Web development</span><i>✦</i
+          ><span>E-commerce</span><i>✦</i><span>Motion</span><i>✦</i><span>Retouching</span><i>✦</i
+          ><span>Performance marketing</span><i>✦</i>
+        </div>
       </div>
-    </section>
 
-    <section id="contact"></section>
-      <div id="home-div-4">
-        <div class="contact-div">
-          <h1>Contact me</h1>
-          <h2>markus.ekerheim@gmail.com</h2>
-          <h2>070-854 41 55</h2>
-        </div></div
-    ></section>
+      <!-- ───────────── Now: Luftix ───────────── -->
+      <section class="now" id="now" data-nav="dark">
+        <div class="container now__grid">
+          <div class="now__text">
+            <p class="kicker reveal"><span>00</span> Now — 2026</p>
+            <h2 class="display reveal">Relaunching <em>Luftix.</em></h2>
+            <p class="now__lead reveal">
+              In 2026 I stepped in as CEO and co-owner of Luftix Nordic AB, a Swedish retailer of air-to-air heat
+              pumps with certified installation nationwide. The company had been dormant, so we restarted it.
+            </p>
+            <p class="reveal">
+              It's where everything I've learned comes together. I run and keep developing the Shopify store, set up
+              the paid search, and handle the business side: suppliers, installation partners and weekly KPI reports
+              to the board. Right now I'm building a way for customers to get an accurate installation price before
+              they check out.
+            </p>
+            <ul class="now__list reveal">
+              <li><strong>Web &amp; e-commerce</strong><span>Shopify storefront, checkout and ongoing development</span></li>
+              <li><strong>Growth</strong><span>Google Ads, analytics and conversion work</span></li>
+              <li><strong>Operations</strong><span>Suppliers, installers, finance and reporting</span></li>
+              <li><strong>Brand</strong><span>Visual identity, decks and customer communication</span></li>
+            </ul>
+            <a class="btn btn--light reveal" href="https://luftix.se" target="_blank" rel="noopener"
+              >Visit luftix.se <span aria-hidden="true">↗</span></a
+            >
+          </div>
 
-    <script src="script.js"></script>
+          <a class="luftix-card reveal" href="https://luftix.se" target="_blank" rel="noopener" aria-label="Luftix website">
+            <div class="luftix-card__bar">
+              <span></span><span></span><span></span>
+              <div class="luftix-card__url">luftix.se</div>
+            </div>
+            <div class="luftix-card__body">
+              <div class="luftix-card__top">
+                <div class="luftix-card__logo">luftix</div>
+                <div class="heatpump" aria-hidden="true">
+                  <div class="heatpump__grille"></div>
+                  <div class="heatpump__fan"><span></span></div>
+                  <div class="heatpump__air"><i></i><i></i><i></i></div>
+                </div>
+              </div>
+              <p class="luftix-card__label">Värmepumpar · Installation i hela Sverige</p>
+              <p class="luftix-card__headline">Air-to-air heat pumps.<br />Installed.</p>
+              <div class="luftix-card__chips">
+                <span>Shopify</span><span>Google Ads</span><span>Certified installers</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ───────────── Work ───────────── -->
+      <section class="work" id="work" data-nav="dark">
+        <div class="container">
+          <header class="section-head">
+            <p class="kicker reveal"><span>01</span> Selected work</p>
+            <h2 class="display reveal">Things I've <em>made.</em></h2>
+            <p class="section-head__note reveal">
+              School briefs, self-initiated projects and experiments. Open any of them for the full story.
+            </p>
+          </header>
+
+          <div class="work-grid">
+            <a class="work-card work-card--wide reveal" href="#work/porsche" data-project="porsche">
+              <figure class="work-card__media" style="--bg: #b08700">
+                <img src="assets/img/porsche-cover.webp" alt="Porsche 963 Singer race car from the coffee-table book spread" width="1400" height="787" loading="lazy" />
+              </figure>
+              <div class="work-card__meta">
+                <span class="work-card__no">01</span>
+                <h3>Porsche coffee-table book</h3>
+                <p>Editorial design</p>
+              </div>
+            </a>
+
+            <a class="work-card reveal" href="#work/cane-and-brew" data-project="cane-and-brew">
+              <figure class="work-card__media" style="--bg: #eae5d6">
+                <img src="assets/img/canebrew-cover.webp" alt="Cane &amp; Brew Café logo" width="1200" height="1200" loading="lazy" />
+              </figure>
+              <div class="work-card__meta">
+                <span class="work-card__no">02</span>
+                <h3>Cane &amp; Brew Café</h3>
+                <p>Brand identity</p>
+              </div>
+            </a>
+
+            <a class="work-card reveal" href="#work/rummel" data-project="rummel">
+              <figure class="work-card__media" style="--bg: #ffd49f">
+                <img src="assets/img/rummel-logo.webp" alt="RUMMEL stacked wordmark" width="900" height="1235" loading="lazy" class="contain contain--small" />
+              </figure>
+              <div class="work-card__meta">
+                <span class="work-card__no">03</span>
+                <h3>Rummel</h3>
+                <p>Identity &amp; social</p>
+              </div>
+            </a>
+
+            <a class="work-card work-card--wide reveal" href="#work/cars-and-coffee" data-project="cars-and-coffee">
+              <figure class="work-card__media" style="--bg: #2a2118">
+                <img src="assets/img/carscoffee-mockup.webp" alt="Cars &amp; Coffee poster framed on a wall" width="1600" height="1506" loading="lazy" style="object-position: 50% 40%" />
+              </figure>
+              <div class="work-card__meta">
+                <span class="work-card__no">04</span>
+                <h3>Cars &amp; Coffee, Bad Gastein</h3>
+                <p>Event poster</p>
+              </div>
+            </a>
+
+            <a class="work-card reveal" href="#work/bitburger" data-project="bitburger">
+              <figure class="work-card__media" style="--bg: #000">
+                <img src="assets/img/bitburger-cover.webp" alt="Bitburger 5L keg lit in the dark" width="1400" height="937" loading="lazy" />
+                <video class="work-card__preview" muted loop playsinline preload="none" data-src="assets/video/bitburger.mp4"></video>
+                <span class="work-card__badge">▶ Film · 0:28</span>
+              </figure>
+              <div class="work-card__meta">
+                <span class="work-card__no">05</span>
+                <h3>Bitburger 5L</h3>
+                <p>Product film</p>
+              </div>
+            </a>
+
+            <a class="work-card work-card--wide reveal" href="#work/frisk-luft" data-project="frisk-luft">
+              <figure class="work-card__media" style="--bg: #2f3a2b">
+                <img src="assets/img/friskluft-cover.webp" alt="Sculpted head resting on a misty forest floor" width="1200" height="800" loading="lazy" />
+              </figure>
+              <div class="work-card__meta">
+                <span class="work-card__no">06</span>
+                <h3>Ta lite frisk luft</h3>
+                <p>Photo manipulation</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="cursor-pill" aria-hidden="true">View</div>
+      </section>
+
+      <!-- ───────────── About ───────────── -->
+      <section class="about" id="about" data-nav="light">
+        <img class="about__waves" src="assets/img/lines.webp" alt="" width="2400" height="229" loading="lazy" />
+        <div class="container about__grid">
+          <div class="about__portrait reveal">
+            <img class="about__me" src="assets/img/portrait.webp" alt="Portrait of Markus Ekerheim in a cap and dark overshirt" width="900" height="992" loading="lazy" />
+            <img class="about__note" src="assets/img/this-is-me.webp" alt="Handwritten note: this is me" width="472" height="410" loading="lazy" />
+          </div>
+          <div class="about__text">
+            <p class="kicker reveal"><span>02</span> About</p>
+            <h2 class="display reveal">Hi, I'm <em>Markus.</em></h2>
+            <p class="about__lead reveal">
+              I started out in Photoshop, got hooked on making things look right, and kept going: into Illustrator and
+              InDesign, into motion, and eventually into code.
+            </p>
+            <p class="reveal">
+              I studied New Media Design at Jönköping University. Today I use all of it running Luftix. I like work
+              where the idea, the look and the build are all mine to get right: brands that feel considered, pages
+              that load fast, and small details nobody asked for but everybody notices. (Like the cow. Did you find
+              it?)
+            </p>
+            <dl class="facts reveal">
+              <div><dt>Now</dt><dd>CEO &amp; co-owner, Luftix Nordic AB</dd></div>
+              <div><dt>Studied</dt><dd>New Media Design, Jönköping University</dd></div>
+              <div><dt>Based in</dt><dd>Sweden · <span data-clock>--:--</span> local time</dd></div>
+              <div><dt>Speaks</dt><dd>Swedish, English</dd></div>
+              <div><dt>This site</dt><dd>Hand-built in HTML, CSS &amp; vanilla JS</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── Services + tools ───────────── -->
+      <section class="services" data-nav="light">
+        <div class="container">
+          <header class="section-head section-head--row">
+            <p class="kicker reveal"><span>03</span> What I do</p>
+            <h2 class="display reveal">From first sketch <em>to checkout.</em></h2>
+          </header>
+          <ol class="services__list">
+            <li class="reveal">
+              <span class="services__no">01</span>
+              <h3>Brand identity</h3>
+              <p>Logos, palettes, type systems and the rules that hold them together.</p>
+            </li>
+            <li class="reveal">
+              <span class="services__no">02</span>
+              <h3>Editorial &amp; print</h3>
+              <p>Posters, spreads and layouts with a clear hierarchy and room to breathe.</p>
+            </li>
+            <li class="reveal">
+              <span class="services__no">03</span>
+              <h3>Web &amp; <span class="nowrap">e-commerce</span></h3>
+              <p>Hand-coded sites and Shopify stores that load fast and make buying easy.</p>
+            </li>
+            <li class="reveal">
+              <span class="services__no">04</span>
+              <h3>Motion &amp; photo</h3>
+              <p>Short-form product film, retouching and compositing.</p>
+            </li>
+          </ol>
+
+          <div class="toolkit reveal">
+            <p class="toolkit__label">Toolkit</p>
+            <ul>
+              <li><img src="images/Icons/photoshop.png" alt="" width="200" height="200" loading="lazy" />Photoshop</li>
+              <li><img src="images/Icons/illustrator.png" alt="" width="200" height="200" loading="lazy" />Illustrator</li>
+              <li><img src="images/Icons/indesign.png" alt="" width="200" height="200" loading="lazy" />InDesign</li>
+              <li><img src="images/Icons/after-effects.png" alt="" width="200" height="200" loading="lazy" />After Effects</li>
+              <li><img src="images/Icons/premiere-pro.png" alt="" width="200" height="200" loading="lazy" />Premiere Pro</li>
+              <li><img src="images/Icons/html-5.png" alt="" width="200" height="200" loading="lazy" />HTML</li>
+              <li><img src="images/Icons/css-3.png" alt="" width="200" height="200" loading="lazy" />CSS</li>
+              <li><img src="images/Icons/js.png" alt="" width="200" height="200" loading="lazy" />JavaScript</li>
+              <li><span class="toolkit__glyph" aria-hidden="true">S</span>Shopify</li>
+              <li><span class="toolkit__glyph" aria-hidden="true">G</span>Google Ads</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── Contact ───────────── -->
+      <section class="contact" id="contact" data-nav="dark">
+        <div class="container">
+          <p class="kicker reveal"><span>04</span> Contact</p>
+          <h2 class="contact__title reveal">
+            <span>Let's make</span>
+            <span><em>something</em> good.</span>
+          </h2>
+          <p class="contact__lead reveal">Got a project, a role or just an idea? I'd love to hear about it.</p>
+
+          <div class="contact__actions reveal">
+            <a class="contact__mail" href="mailto:markus.ekerheim@gmail.com">
+              markus.ekerheim@gmail.com <span aria-hidden="true">→</span>
+            </a>
+            <button class="btn btn--ghost copy" type="button" data-copy="markus.ekerheim@gmail.com">
+              <span class="copy__label">Copy email</span>
+            </button>
+          </div>
+
+          <ul class="contact__links reveal">
+            <li><span>Phone</span><a href="tel:+46708544155">+46 70-854 41 55</a></li>
+            <li><span>Company</span><a href="https://luftix.se" target="_blank" rel="noopener">luftix.se ↗</a></li>
+            <li><span>Code</span><a href="https://github.com/mackeato/ekerheim-portfolio" target="_blank" rel="noopener">This site on GitHub ↗</a></li>
+          </ul>
+        </div>
+
+        <footer class="footer container">
+          <p>© <span data-year>2026</span> Markus Ekerheim</p>
+          <p>Designed &amp; built by hand. No templates, no frameworks.</p>
+          <a href="#top">Back to top ↑</a>
+        </footer>
+      </section>
+    </main>
+
+    <!-- ───────────── Case study viewer ───────────── -->
+    <dialog class="case" aria-labelledby="case-title">
+      <div class="case__inner">
+        <header class="case__top">
+          <span class="case__count"></span>
+          <button class="case__close" type="button" aria-label="Close project">
+            <span>Close</span><i aria-hidden="true"></i>
+          </button>
+        </header>
+        <div class="case__head">
+          <p class="case__type"></p>
+          <h2 class="case__title" id="case-title"></h2>
+          <p class="case__summary"></p>
+          <dl class="case__meta"></dl>
+        </div>
+        <div class="case__body"></div>
+        <footer class="case__foot">
+          <button class="case__nav case__prev" type="button"><small>Previous</small><span></span></button>
+          <button class="case__nav case__next" type="button"><small>Next project</small><span></span></button>
+        </footer>
+      </div>
+    </dialog>
+
+    <script src="script.js" defer></script>
   </body>
 </html>
