@@ -1,6 +1,8 @@
-# ekerheim-portfolio
+# mackeato.github.io
 
 My personal portfolio: brand identity, editorial, web, motion and photo work, plus what I'm doing now at Luftix.
+
+Live at **https://mackeato.github.io**
 
 Hand-built with HTML, CSS and vanilla JavaScript. No frameworks, no build step. Hosted on GitHub Pages.
 
