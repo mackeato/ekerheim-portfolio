@@ -2,7 +2,7 @@
 
 My personal portfolio: brand identity, editorial, web, motion and photo work, plus what I'm doing now at Luftix.
 
-Live at **https://mekerheim.com**
+Live at **https://www.mekerheim.com**
 
 Hand-built with HTML, CSS and vanilla JavaScript. No frameworks, no build step. Hosted on GitHub Pages.
 

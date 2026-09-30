@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mekerheim.com/sitemap.xml
+Sitemap: https://www.mekerheim.com/sitemap.xml
