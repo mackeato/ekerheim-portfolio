@@ -116,6 +116,46 @@ const PROJECTS = [
     ],
   },
   {
+    id: "arthouse",
+    title: "Arthouse",
+    type: "Event identity",
+    summary:
+      "A visual identity for Arthouse, a pop-up art gallery in Jönköping. It had to work at every scale, from a building-sized banner down to a business card and an Instagram feed. The wordmark breaks “Arthouse” into three stacked syllables so it sits in a square like a framed piece, and a soft, rounded serif keeps it friendly rather than intimidating. Hand-drawn line icons (a palette, a house, a balloon dog, a portrait) carry the line “step into art” through everything, in cobalt blue on warm cream and black.",
+    meta: {
+      Scope: "Logo, visual identity, line icons, social media, mockups",
+      Tools: "Figma",
+      Context: "Content design course, Jönköping University, 2024 · group project",
+    },
+    blocks: [
+      {
+        type: "pair",
+        items: [
+          { src: "assets/img/arthouse-cover-book.webp", w: 900, h: 1414, alt: "Black cover with the stacked Arthouse wordmark in cream, 'step into art' and a line-drawn house." },
+          { src: "assets/img/arthouse-billboard.webp", w: 900, h: 1290, alt: "Building-sized banner with the Arthouse wordmark, 'Pop up art gallery', a blue balloon dog and the gallery address." },
+        ],
+      },
+      {
+        type: "palette",
+        colors: [
+          { name: "Cream", hex: "#EFE6D9", on: "#000000" },
+          { name: "Cobalt", hex: "#0036F8", on: "#FFFFFF" },
+          { name: "Deep blue", hex: "#204093", on: "#FFFFFF" },
+          { name: "Soft blue", hex: "#6B97D4", on: "#000000" },
+          { name: "Black", hex: "#000000", on: "#EFE6D9" },
+        ],
+      },
+      {
+        type: "pair",
+        items: [
+          { src: "assets/img/arthouse-cards.webp", w: 900, h: 1414, alt: "Kraft business cards printed with the wordmark and blue line icons: a palette, a house and a reclining figure." },
+          { src: "assets/img/arthouse-gallery.webp", w: 900, h: 1414, alt: "A blue line-drawn portrait from the identity, hung as a print on a gallery wall." },
+        ],
+      },
+      { type: "image", src: "assets/img/arthouse-instagram.webp", w: 2000, h: 677, alt: "Six Instagram screens for Arthouse: posts with the line portrait, the banner, the profile grid, the business cards and the cover.", caption: "Launching on Instagram: the profile and the first posts." },
+      { type: "image", src: "assets/img/arthouse-sketches.webp", w: 1800, h: 1280, alt: "Logo sketches: chrome 3D lettering, bubbly type, split blue lettering and the first stacked 'Art hou se.' versions.", caption: "Logo explorations. The stacked wordmark in the top right is the one that stuck." },
+    ],
+  },
+  {
     id: "taberg-springs",
     title: "Taberg Springs",
     type: "Packaging & brand",
