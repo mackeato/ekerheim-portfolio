@@ -1083,7 +1083,7 @@ em {
 
 .work {
   position: relative;
-  padding-block: clamp(4rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem);
+  padding-block: clamp(4rem, 10vw, 8rem) clamp(4rem, 9vw, 7rem);
   background: linear-gradient(var(--ink), #001c1c);
   color: var(--cream);
 }
@@ -1129,17 +1129,9 @@ em {
   grid-column: 1 / -1;
 }
 
-/* Stagger rows so the grid feels composed, not stacked. */
-.work-card:nth-child(2) {
-  margin-top: clamp(0rem, 8vw, 7rem);
-}
-
-.work-card:nth-child(3) {
-  margin-top: clamp(-4rem, -4vw, 0rem);
-}
-
-.work-card:nth-child(4) {
-  margin-top: clamp(0rem, 6vw, 5rem);
+/* Narrow cards on the right of a row drop down, so the grid feels composed, not stacked. */
+.work-card--drop {
+  margin-top: clamp(0rem, 7vw, 6rem);
 }
 
 .work-card__media {
@@ -1157,6 +1149,111 @@ em {
 
 .work-card--full .work-card__media {
   aspect-ratio: 16 / 9;
+}
+
+.work-card--feature .work-card__media {
+  aspect-ratio: 21 / 9;
+}
+
+/* Thesis cover: a designed card instead of a photo. The stat is a hero figure, so it is set in the sans. */
+.thesis-cover {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  background:
+    radial-gradient(70% 90% at 100% 100%, rgba(135, 182, 182, 0.28), transparent 70%),
+    var(--bg);
+}
+
+.thesis-cover__kicker {
+  color: var(--sage);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.thesis-cover__stat {
+  margin-top: 0.5rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: clamp(3.5rem, 2rem + 6vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--cream);
+}
+
+.thesis-cover__label {
+  max-width: 26ch;
+  margin-top: 0.75rem;
+  font-size: clamp(1.05rem, 0.9rem + 0.6vw, 1.4rem);
+  line-height: 1.35;
+  color: var(--cream);
+}
+
+.thesis-cover__sub {
+  margin-top: 0.5rem;
+  color: var(--sage);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 0.9rem + 0.5vw, 1.35rem);
+}
+
+.thesis-cover__ads {
+  position: relative;
+  height: 100%;
+  min-height: 12rem;
+}
+
+.work-card__media .thesis-cover__ads img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 88%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 24px 50px -18px rgba(0, 0, 0, 0.7);
+  transition: transform 1.2s var(--ease);
+}
+
+.work-card__media .thesis-cover__ads img:first-child {
+  inset: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-85%, -50%) rotate(-7deg);
+}
+
+.work-card__media .thesis-cover__ads img:nth-child(2) {
+  inset: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-25%, -46%) rotate(5deg);
+}
+
+.work-card:hover .thesis-cover__ads img:first-child {
+  transform: translate(-95%, -52%) rotate(-10deg);
+}
+
+.work-card:hover .thesis-cover__ads img:nth-child(2) {
+  transform: translate(-15%, -44%) rotate(8deg);
+}
+
+.thesis-cover__tag {
+  position: absolute;
+  right: 12%;
+  top: 8%;
+  z-index: 2;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
 }
 
 .work-card__media img,
@@ -1266,6 +1363,103 @@ em {
   scale: 1;
 }
 
+/* Lab ---------------------------------------------------------------------- */
+
+/* Same tone as the bottom of Work and the wave fill, so the wavy edge still reads as one piece. */
+.lab-section {
+  padding-block: clamp(1rem, 3vw, 2rem) clamp(2rem, 5vw, 4rem);
+  background: #001c1c;
+  color: var(--cream);
+}
+
+.lab-section .kicker,
+.lab-section .display em {
+  color: var(--sage);
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.lab-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: 18px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--cream) 5%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cream) 10%, transparent);
+  text-decoration: none;
+  transition: transform 0.6s var(--ease), background-color 0.4s;
+}
+
+.lab-card:hover {
+  transform: translateY(-6px);
+  background: color-mix(in srgb, var(--cream) 8%, transparent);
+}
+
+.lab-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #111;
+}
+
+.lab-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease);
+}
+
+.lab-card__media--pixel img {
+  object-position: 50% 50%;
+  image-rendering: pixelated;
+}
+
+.lab-card:hover .lab-card__media img {
+  transform: scale(1.04);
+}
+
+.lab-card__badge {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+}
+
+.lab-card__body {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  padding: 1.4rem 1.5rem 1.6rem;
+}
+
+.lab-card h3 {
+  font-family: var(--display);
+  font-size: clamp(2rem, 1.5rem + 1.5vw, 2.8rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.lab-card p {
+  color: var(--mist);
+  font-size: 0.98rem;
+}
+
+.lab-card__cta {
+  margin-top: 0.5rem;
+  color: var(--sky);
+  font-weight: 600;
+}
+
 /* About ------------------------------------------------------------------- */
 
 .about {
@@ -1367,6 +1561,46 @@ em {
 
 .facts dd {
   font-weight: 500;
+}
+
+.timeline__title {
+  margin: 2.5rem 0 1rem;
+  color: var(--teal);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.timeline {
+  display: grid;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+}
+
+.timeline__when {
+  padding-top: 0.15rem;
+  color: var(--teal);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline strong {
+  font-weight: 600;
+}
+
+.timeline p {
+  margin-top: 0.2rem;
+  color: color-mix(in srgb, var(--ink) 75%, transparent);
+  font-size: 0.95rem;
 }
 
 [data-clock] {
@@ -1573,6 +1807,25 @@ em {
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
+}
+
+.ai__link {
+  justify-self: start;
+  margin-top: 0.4rem;
+  color: var(--cream);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--cream) 40%, transparent);
+}
+
+.ai__link:hover {
+  border-bottom-color: var(--cream);
+}
+
+.ai__practice .ai__link span {
+  color: inherit;
+  font-size: inherit;
 }
 
 .ai__practice span {
@@ -1806,7 +2059,7 @@ em {
 
 .contact__links {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   gap: 1.5rem;
   margin-top: clamp(3rem, 8vw, 6rem);
   padding-top: 1.5rem;
@@ -2052,6 +2305,12 @@ em {
   align-items: start;
 }
 
+.case__pair--narrow {
+  width: 100%;
+  max-width: 640px;
+  justify-self: center;
+}
+
 .case__note {
   max-width: 60ch;
   padding: 1.25rem 1.5rem;
@@ -2087,6 +2346,110 @@ em {
   font-size: 0.85rem;
   opacity: 0.8;
   font-variant-numeric: tabular-nums;
+}
+
+/* Stat tiles: value in the sans (never display/serif), label, one-line detail. */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: color-mix(in srgb, var(--cream) 12%, transparent);
+}
+
+.stats li {
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+  padding: 1.5rem 1.4rem 1.6rem;
+  background: #001b1b;
+}
+
+.stats__value {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 1.8rem + 2vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+
+.stats__label {
+  margin-top: 0.4rem;
+  color: var(--sage);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.stats__detail {
+  color: var(--mist);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.insight {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 0.5rem 3rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-radius: var(--radius);
+  background: radial-gradient(80% 120% at 0% 0%, rgba(57, 132, 129, 0.45), transparent 70%), var(--deep);
+}
+
+.insight__kicker {
+  grid-column: 1 / -1;
+  color: var(--sage);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.insight__title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 1.6rem + 3vw, 4.2rem);
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.insight__text {
+  color: var(--mist);
+  font-size: 1.05rem;
+}
+
+.case__gallery {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.case__gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 3), 1fr);
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  align-items: start;
+}
+
+.case__gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  background: var(--deep);
+}
+
+.case__gallery--light .case__gallery-grid {
+  align-items: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.case__gallery figcaption {
+  color: color-mix(in srgb, var(--cream) 60%, transparent);
+  font-size: 0.9rem;
 }
 
 /* Before / after comparison slider */
@@ -2290,9 +2653,18 @@ em {
     margin-top: 0 !important;
   }
 
-  .work-card__media,
+  .work-card--feature .work-card__media.thesis-cover {
+    aspect-ratio: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .thesis-cover__ads {
+    min-height: 15rem;
+  }
+
+  .work-card__media:not(.thesis-cover),
   .work-card--wide .work-card__media,
-  .work-card--full .work-card__media {
+  .work-card--full .work-card__media:not(.thesis-cover) {
     aspect-ratio: 4 / 3;
   }
 
@@ -2309,6 +2681,10 @@ em {
   }
 
   .ai__flow {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2344,11 +2720,28 @@ em {
     gap: 0.15rem;
   }
 
+  .timeline li {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
   .contact__links {
     grid-template-columns: 1fr;
   }
 
   .case__pair {
+    grid-template-columns: 1fr;
+  }
+
+  .case__gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .case__pair.case__pair--narrow {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .insight {
     grid-template-columns: 1fr;
   }
 

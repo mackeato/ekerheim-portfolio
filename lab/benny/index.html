@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benny the Bird — Markus Ekerheim</title>
+    <meta name="description" content="Benny the Bird: a pixel-art platform game in vanilla JavaScript. Help a swallow that can't fly bounce back up to its nest." />
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../lab.css" />
+    <style>
+      .play {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: clamp(1.5rem, 4vw, 3rem);
+        align-items: start;
+      }
+      .cabinet {
+        position: relative;
+        width: min(400px, 100%);
+        aspect-ratio: 400 / 820;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #85c87f;
+        box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 246, 222, 0.1);
+        touch-action: none;
+        user-select: none;
+      }
+      .cabinet canvas {
+        display: block;
+        width: 100% !important;
+        height: auto !important;
+        image-rendering: pixelated;
+      }
+      #loading {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        color: #00393c;
+        font-weight: 600;
+      }
+      .pad {
+        display: none;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.5rem;
+        width: min(400px, 100%);
+        margin-top: 0.75rem;
+      }
+      .pad button,
+      .side button {
+        padding: 0.9rem 0.5rem;
+        border: 0;
+        border-radius: 12px;
+        background: rgba(255, 246, 222, 0.1);
+        color: var(--cream);
+        font: 600 0.9rem var(--sans);
+        touch-action: none;
+        cursor: pointer;
+      }
+      .pad button:active {
+        background: rgba(255, 246, 222, 0.25);
+      }
+      .pad .pad__arrow {
+        font-size: 1.4rem;
+      }
+      .keys {
+        display: grid;
+        gap: 0.75rem;
+        margin: 0 0 1.5rem;
+        padding: 0;
+        list-style: none;
+      }
+      .keys li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      kbd {
+        display: inline-grid;
+        place-items: center;
+        min-width: 2.2rem;
+        height: 2.2rem;
+        padding: 0 0.5rem;
+        border-radius: 8px;
+        background: rgba(255, 246, 222, 0.1);
+        box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.35);
+        font: 600 0.85rem var(--sans);
+      }
+      .side {
+        display: grid;
+        gap: 1.25rem;
+        justify-items: start;
+      }
+      .side button {
+        padding: 0.6rem 1rem;
+        border-radius: 999px;
+      }
+      @media (hover: none), (max-width: 760px) {
+        .pad {
+          display: grid;
+        }
+      }
+      @media (max-width: 760px) {
+        .play {
+          grid-template-columns: 1fr;
+          justify-items: center;
+        }
+        .cabinet {
+          width: min(400px, 100%, calc((100svh - 9rem) * 400 / 820));
+        }
+        .pad {
+          width: min(400px, 100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="lab">
+      <nav class="lab__top" aria-label="Lab">
+        <a href="../../#lab">← Back to the portfolio</a>
+        <span>Lab · 02</span>
+      </nav>
+
+      <header class="lab__head">
+        <h1>Benny <em>the Bird.</em></h1>
+        <div>
+          <ul class="lab__meta">
+            <li>Game</li>
+            <li>JavaScript</li>
+            <li>p5.js</li>
+            <li>Pixel art</li>
+            <li>2024</li>
+          </ul>
+          <p>
+            Benny is a tree swallow who tried to fly and failed. Now he has to bounce his way back up to the nest,
+            leaf by leaf, dodging a squirrel that guards the tree. A Doodle Jump-style game built from scratch in
+            JavaScript, with hand-made pixel art, sound effects and music.
+          </p>
+        </div>
+      </header>
+
+      <div class="play">
+        <div>
+          <div class="cabinet" id="cabinet">
+            <p id="loading">Loading Benny…</p>
+          </div>
+          <div class="pad" aria-label="Game controls">
+            <button class="pad__arrow" type="button" data-key="ArrowLeft" data-code="37" data-hold aria-label="Move left">←</button>
+            <button type="button" data-key=" " data-code="32">Start</button>
+            <button class="pad__arrow" type="button" data-key="ArrowRight" data-code="39" data-hold aria-label="Move right">→</button>
+            <button type="button" data-key="i" data-code="73">Info</button>
+            <span></span>
+            <button type="button" data-key="r" data-code="82">Restart</button>
+          </div>
+        </div>
+
+        <div class="side">
+          <ul class="keys">
+            <li><kbd>Space</kbd> Start the game</li>
+            <li><kbd>←</kbd><kbd>→</kbd> Steer Benny</li>
+            <li><kbd>I</kbd> How to play</li>
+            <li><kbd>R</kbd> Restart after game over</li>
+          </ul>
+          <button type="button" id="mute" aria-pressed="false">Sound on</button>
+          <p class="note">
+            Bounce on the leaves, climb as high as you can and watch out for the battle squirrel. Your high score is
+            saved in your browser. Made in a two-person team for Foundations of Programming at Jönköping University,
+            with p5.js, pixel art, sound effects and music.
+          </p>
+        </div>
+      </div>
+    </main>
+    <!-- p5.js 1.4.0 (LGPL-2.1), self-hosted so the game doesn't depend on a CDN -->
+    <script src="../vendor/p5-1.4.0.min.js"></script>
+    <script src="../vendor/p5.sound-1.4.0.min.js"></script>
+    <script src="main.js"></script>
+    <script src="portfolio.js"></script>
+  </body>
+</html>

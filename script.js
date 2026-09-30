@@ -12,6 +12,150 @@ const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
 const PROJECTS = [
   {
+    id: "ai-penalty",
+    title: "The AI penalty",
+    type: "Research · Bachelor thesis",
+    summary:
+      "Brands save time and money with AI-generated ads, but what does it cost them in trust? For our bachelor thesis we ran a controlled A/B experiment: 40 people rated 400 fictional Instagram ads. Half were generated with ChatGPT and half were made by hand in Photoshop and Illustrator, shown under three levels of AI disclosure. We built our own survey platform to control the randomisation and the disclosure groups.",
+    meta: {
+      Type: "Bachelor thesis, Informatics (15 credits)",
+      Method: "A/B experiment, custom survey platform, ANOVA and paired t-tests",
+      Context: "Jönköping University, 2026, with Charlie Eklund",
+    },
+    blocks: [
+      {
+        type: "stats",
+        items: [
+          { value: "79.8%", label: "Detection accuracy", detail: "People spotted which ads were AI far above chance (50%)." },
+          { value: "86%", label: "AI ads caught", detail: "Most AI-generated ads were correctly identified as AI." },
+          { value: "+10.1%", label: "Trust for human-made", detail: "Human-made ads were rated more trustworthy (p = .003)." },
+          { value: "No gap", label: "In visual appeal", detail: "AI ads looked just as good: 3.53 vs 3.44, not significant." },
+        ],
+      },
+      {
+        type: "insight",
+        kicker: "The key finding",
+        title: "The penalty is psychological.",
+        text: "Trust didn't follow what an ad actually was. It followed what people believed it was. AI-generated ads that were suspected of being AI scored 2.99 for trust; the ones that passed as human scored 3.54. Human-made ads that looked like AI took a hit too. And labelling AI content didn't change any of it: disclosure had no significant effect on any of the five measures.",
+      },
+      {
+        type: "gallery",
+        caption: "A selection of the AI-generated ads, made with ChatGPT from documented prompts. Only technical errors were corrected.",
+        items: [
+          { src: "assets/img/thesis-ai-velore.webp", w: 900, h: 1350, alt: "AI-generated perfume ad for the fictional brand Veloré, with the tagline 'Scent, Evolved.'" },
+          { src: "assets/img/thesis-ai-dragon.webp", w: 900, h: 1350, alt: "AI-generated film poster for 'The Dragon's Heart'." },
+          { src: "assets/img/thesis-ai-lastlight.webp", w: 900, h: 1350, alt: "AI-generated poster titled 'The last light of hope'." },
+          { src: "assets/img/thesis-ai-nailstudio.webp", w: 900, h: 1125, alt: "AI-generated ad for a nail studio in Jönköping." },
+        ],
+      },
+      {
+        type: "note",
+        text: "What it means: brands that swap human work for AI save on production but pay a trust premium, whether or not the ad is labelled. For the EU AI Act, which assumes labels protect consumers, our data suggests people often don't need the label to notice. Limitations: 40 participants, mostly aged 18–24, so the results point in a direction rather than settle it.",
+      },
+    ],
+  },
+  {
+    id: "dishdash",
+    title: "Dishdash",
+    type: "UX & app design",
+    summary:
+      "A food-delivery app designed around what people actually complain about: late or cold food, confusing order status, hidden fees and support that's hard to find. We started with a competitor analysis of Foodora, Uber Eats, Wolt and Bolt Food, then interviews and a survey. The findings became personas, a sitemap, paper sketches and finally an interactive Figma prototype in a warm, playful orange.",
+    meta: {
+      Role: "Research, wireframes, UI design, usability testing",
+      Tools: "Figma, Illustrator",
+      Context: "UX design course, Jönköping University, 2024 · team of three",
+    },
+    blocks: [
+      {
+        type: "gallery",
+        cols: 5,
+        caption: "The order flow: browse by cuisine, pick a restaurant, review the cart, choose delivery and payment, then follow the driver.",
+        items: [
+          { src: "assets/img/dishdash-screen-18.webp", w: 600, h: 1298, alt: "Home screen with restaurants grouped by cuisine: sushi, pasta and Asian." },
+          { src: "assets/img/dishdash-screen-13.webp", w: 600, h: 1298, alt: "Restaurant page for Eataly with popular dishes and add buttons." },
+          { src: "assets/img/dishdash-screen-14.webp", w: 600, h: 1298, alt: "Cart view with items, quantities, a message to the restaurant and add-ons." },
+          { src: "assets/img/dishdash-screen-15.webp", w: 600, h: 1298, alt: "Checkout with delivery time, delivery or pick-up, and payment by card, Apple Pay, Swish, Klarna or PayPal." },
+          { src: "assets/img/dishdash-screen-17.webp", w: 600, h: 1298, alt: "Tracking screen with a map, estimated delivery time and a contact driver button." },
+        ],
+      },
+      {
+        type: "stats",
+        items: [
+          { value: "39", label: "Survey responses", detail: "Plus phone interviews, to find what makes or breaks a delivery app." },
+          { value: "2", label: "Personas", detail: "A student in central Jönköping and a suburban dad with picky eaters." },
+          { value: "5", label: "Usability tests", detail: "Run on campus with the Figma prototype on a real phone." },
+          { value: "18", label: "Screens", detail: "From the home feed to live tracking, support and account." },
+        ],
+      },
+      { type: "image", src: "assets/img/dishdash-sitemap.webp", w: 1800, h: 626, bg: "#fff", alt: "Sitemap: home page branching into account, browse restaurants, cart and checkout, and customer support.", caption: "The sitemap. Everything reachable from home, and home reachable from everywhere." },
+      {
+        type: "gallery",
+        caption: "Personas and paper wireframes, before anything went into Figma.",
+        items: [
+          { src: "assets/img/dishdash-persona-1.webp", w: 1000, h: 1085, alt: "Persona: Emily Johansson, 21, student in Jönköping." },
+          { src: "assets/img/dishdash-persona-2.webp", w: 1000, h: 999, alt: "Persona: Björn Larsson, 35, parent living in a suburb." },
+          { src: "assets/img/dishdash-sketch-1.webp", w: 900, h: 1200, alt: "Hand-drawn wireframes of the home and restaurant screens." },
+          { src: "assets/img/dishdash-sketch-2.webp", w: 900, h: 1200, alt: "Hand-drawn wireframes of the cart, checkout and confirmation screens." },
+        ],
+      },
+      {
+        type: "insight",
+        kicker: "What testing changed",
+        title: "Five tests, five fixes.",
+        text: "The script typeface was hard to read, so it now appears only in the logo and a few titles. People got lost, so we added a back button and home buttons on the confirmation and tracking pages. The tracking page gained the delivery address and a way to contact the driver. The loud orange payment boxes were toned down to 50% with a solid outline. And we added more information about dishes and restaurants throughout.",
+      },
+      {
+        type: "pair",
+        narrow: true,
+        items: [
+          { src: "assets/img/dishdash-screen-1.webp", w: 600, h: 1298, alt: "Support screen with telephone, live chat and mail options." },
+          { src: "assets/img/dishdash-screen-3.webp", w: 600, h: 1298, alt: "Account screen with profile details, order history and favourites." },
+        ],
+      },
+      { type: "note", text: "Support was one of the most requested features in the research, so it sits in the bottom bar on every screen instead of being buried in a menu." },
+    ],
+  },
+  {
+    id: "taberg-springs",
+    title: "Taberg Springs",
+    type: "Packaging & brand",
+    summary:
+      "A sparkling water brand named after Taberg, the mountain just outside Jönköping. The label reduces the landscape to a few flat shapes (peaks, meadow, a waterfall) and the scalloped gold band follows the ridgeline. Forest green, sky blue and gold keep it fresh without shouting.",
+    meta: {
+      Role: "Brand name, label illustration, packaging mockups",
+      Tools: "Illustrator, Photoshop",
+      Context: "Marketing Communication, Jönköping University, 2024",
+    },
+    blocks: [
+      { type: "image", src: "assets/img/taberg-front.webp", w: 640, h: 1200, narrow: true, bg: "#d2d2d2", alt: "Front view of the Taberg Springs can: mountain and waterfall illustration above a gold 'Sparkling Water' band." },
+      { type: "image", src: "assets/img/taberg-lineup.webp", w: 2048, h: 1044, alt: "Four angles of the Taberg Springs can mockup." },
+    ],
+  },
+  {
+    id: "monarki",
+    title: "Monarki",
+    type: "Packaging concept",
+    summary:
+      "The brief: design a box for a single word. I picked “Monarki” and gave it a slogan, “Ett styre, en styr” (one rule, one ruler). The box uses the blue and yellow of the Swedish flag, a royal pattern that wraps all the way around, and “Est. 1544”, the year the Swedish crown became hereditary. A small “Demokrati ingår ej” (democracy not included) adds a wink. Underneath, the crowns from all four sides flow together into the Swedish flag.",
+    meta: {
+      Role: "Concept, slogan, typography, packaging",
+      Type: "Frank Gothic Heavy and Book",
+      Context: "University admission test, 2023",
+    },
+    blocks: [
+      { type: "image", src: "assets/img/monarki-1.webp", w: 1600, h: 800, alt: "Flat artwork for the Monarki box: yellow wordmark, crown and slogan on a royal blue pattern." },
+      {
+        type: "gallery",
+        light: true,
+        items: [
+          { src: "assets/img/monarki-3.webp", w: 738, h: 405, alt: "Monarki box mockup seen from above." },
+          { src: "assets/img/monarki-2.webp", w: 738, h: 468, alt: "Monarki box mockup from the front, with a crown fading from blue to yellow." },
+          { src: "assets/img/monarki-4.webp", w: 795, h: 616, alt: "The underside of the Monarki box, where the four crowns form the Swedish flag." },
+        ],
+      },
+    ],
+  },
+  {
     id: "porsche",
     title: "Porsche coffee-table book",
     type: "Editorial design",
@@ -290,6 +434,10 @@ $$(".reveal").forEach((el) => {
 const pill = $(".cursor-pill");
 const cards = $$(".work-card");
 
+// Case-study order (prev/next) follows the order of the cards in the grid.
+const cardOrder = cards.map((c) => c.dataset.project);
+PROJECTS.sort((a, b) => cardOrder.indexOf(a.id) - cardOrder.indexOf(b.id));
+
 if (finePointer) {
   let px = 0,
     py = 0,
@@ -375,7 +523,7 @@ function renderBlock(block) {
         block.caption && h("figcaption", { text: block.caption }),
       ]);
     case "pair":
-      return h("div", { class: "case__pair" }, block.items.map((i) => h("figure", { class: "case__figure" }, img(i))));
+      return h("div", { class: `case__pair${block.narrow ? " case__pair--narrow" : ""}` }, block.items.map((i) => h("figure", { class: "case__figure" }, img(i))));
     case "video":
       return h("figure", { class: "case__figure case__figure--video" }, [
         h("video", { src: block.src, poster: block.poster, controls: true, playsinline: true, preload: "metadata" }),
@@ -383,6 +531,29 @@ function renderBlock(block) {
       ]);
     case "note":
       return h("p", { class: "case__note", text: block.text });
+    case "stats":
+      return h(
+        "ul",
+        { class: "stats" },
+        block.items.map((i) =>
+          h("li", {}, [
+            h("span", { class: "stats__value", text: i.value }),
+            h("span", { class: "stats__label", text: i.label }),
+            h("span", { class: "stats__detail", text: i.detail }),
+          ])
+        )
+      );
+    case "insight":
+      return h("section", { class: "insight" }, [
+        h("p", { class: "insight__kicker", text: block.kicker }),
+        h("h3", { class: "insight__title", text: block.title }),
+        h("p", { class: "insight__text", text: block.text }),
+      ]);
+    case "gallery":
+      return h("figure", { class: `case__gallery${block.light ? " case__gallery--light" : ""}` }, [
+        h("div", { class: "case__gallery-grid", style: `--cols:${block.cols || Math.min(block.items.length, 4)}` }, block.items.map(img)),
+        block.caption && h("figcaption", { text: block.caption }),
+      ]);
     case "palette":
       return h(
         "ul",
@@ -467,6 +638,14 @@ cards.forEach((card) =>
   card.addEventListener("click", (e) => {
     e.preventDefault();
     openProject(card.dataset.project);
+  })
+);
+
+// Other links into a case study (e.g. from the AI section).
+$$("[data-open-project]").forEach((link) =>
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    openProject(link.dataset.openProject);
   })
 );
 

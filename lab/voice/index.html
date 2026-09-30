@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voice Mirror — Markus Ekerheim</title>
+    <meta name="description" content="An audio-reactive webcam mirror: your voice bends and glitches your own image in real time. Built with the Web Audio API and Canvas." />
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../lab.css" />
+    <style>
+      .stage {
+        position: relative;
+        display: grid;
+        place-items: center;
+        aspect-ratio: 16 / 9;
+        border-radius: 18px;
+        overflow: hidden;
+        background:
+          repeating-linear-gradient(0deg, rgba(135, 182, 182, 0.06) 0 2px, transparent 2px 6px),
+          #001b1b;
+        box-shadow: inset 0 0 0 1px rgba(255, 246, 222, 0.08);
+      }
+      .stage canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scaleX(-1); /* mirror, like looking into a mirror */
+      }
+      .stage canvas[hidden] {
+        display: none;
+      }
+      .intro {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        justify-items: center;
+        gap: 1rem;
+        max-width: 34rem;
+        padding: 1.5rem;
+        text-align: center;
+      }
+      .intro p {
+        margin: 0;
+        color: var(--mist);
+      }
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .how {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        margin-top: 2.5rem;
+        border-radius: 14px;
+        overflow: hidden;
+        background: rgba(255, 246, 222, 0.12);
+      }
+      .how div {
+        padding: 1.1rem 1.25rem;
+        background: var(--ink);
+      }
+      .how strong {
+        display: block;
+        color: var(--sage);
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .how span {
+        font-size: 0.95rem;
+      }
+      @media (max-width: 760px) {
+        .how {
+          grid-template-columns: 1fr;
+        }
+        .stage {
+          aspect-ratio: 3 / 4;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="lab">
+      <nav class="lab__top" aria-label="Lab">
+        <a href="../../#lab">← Back to the portfolio</a>
+        <span>Lab · 01</span>
+      </nav>
+
+      <header class="lab__head">
+        <h1>Voice <em>mirror.</em></h1>
+        <div>
+          <ul class="lab__meta">
+            <li>Creative coding</li>
+            <li>Web Audio API</li>
+            <li>Canvas 2D</li>
+            <li>2025</li>
+          </ul>
+          <p>
+            An interactive piece about human expression and machine perception. The camera shows you, and your voice
+            decides how much of you survives: low hums make the image wobble, loud high sounds tear it into glitch bands.
+          </p>
+        </div>
+      </header>
+
+      <section class="stage" aria-label="Voice mirror">
+        <canvas id="c" hidden></canvas>
+        <video id="v" autoplay playsinline muted hidden></video>
+        <div class="intro" id="intro">
+          <p><strong>Needs your camera and microphone.</strong> Everything runs in your browser. Nothing is recorded, stored or sent anywhere.</p>
+          <button class="btn" id="start" type="button">Start the mirror</button>
+          <p class="note" id="status" role="status"></p>
+        </div>
+      </section>
+
+      <div class="controls">
+        <p class="note">Try humming low, then say a long “sssss”. Best in a quiet room.</p>
+        <button class="btn btn--ghost" id="stop" type="button" hidden>Stop camera</button>
+      </div>
+
+      <div class="how">
+        <div><strong>Listen</strong><span>An AnalyserNode measures loudness (RMS) and the spectral centroid as a pitch estimate.</span></div>
+        <div><strong>See</strong><span>Every frame is split into RGB channels, posterized and traced with a Sobel edge filter.</span></div>
+        <div><strong>React</strong><span>Volume drives a sine wobble per row; high pitch plus volume switches to glitch bands.</span></div>
+      </div>
+    </main>
+
+    <script src="effect.js"></script>
+    <script>
+      const startBtn = document.getElementById("start");
+      const stopBtn = document.getElementById("stop");
+      const intro = document.getElementById("intro");
+      const status = document.getElementById("status");
+      const canvas = document.getElementById("c");
+      let stop = null;
+
+      startBtn.addEventListener("click", async () => {
+        status.textContent = "Asking for camera and microphone…";
+        try {
+          stop = await window.startMirror();
+          intro.hidden = true;
+          canvas.hidden = false;
+          stopBtn.hidden = false;
+        } catch (err) {
+          status.textContent =
+            err && err.name === "NotAllowedError"
+              ? "Permission was declined. Allow camera and microphone in your browser to try it."
+              : "Couldn't start the camera or microphone on this device.";
+        }
+      });
+
+      stopBtn.addEventListener("click", () => {
+        if (stop) stop();
+        stop = null;
+        canvas.hidden = true;
+        intro.hidden = false;
+        stopBtn.hidden = true;
+        status.textContent = "Camera and microphone are off.";
+      });
+    </script>
+  </body>
+</html>
