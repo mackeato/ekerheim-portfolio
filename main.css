@@ -2305,6 +2305,12 @@ em {
   align-items: start;
 }
 
+.case__pair--narrow {
+  width: 100%;
+  max-width: 640px;
+  justify-self: center;
+}
+
 .case__note {
   max-width: 60ch;
   padding: 1.25rem 1.5rem;
@@ -2729,6 +2735,10 @@ em {
 
   .case__gallery-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .case__pair.case__pair--narrow {
+    grid-template-columns: 1fr 1fr;
   }
 
   .insight {
