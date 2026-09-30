@@ -15,7 +15,8 @@ script.js         Interactions + project data for the case-study viewer (PROJECT
 assets/img/       Web-optimised WebP images used by the site
 assets/video/     Compressed product film
 assets/fonts/     WOFF2 versions of Built Titling, Playfair Display and Bahnschrift
-lab/              Interactive pieces: voice/ (Voice mirror) and benny/ (Benny the Bird)
+lab/              Interactive pieces: voice/ (Voice mirror) and benny/ (Benny the Bird, p5.js)
+lab/vendor/       Self-hosted p5.js 1.4.0 + p5.sound (LGPL-2.1)
 images/, videos/, fonts/   Original full-resolution source files
 ```
 
@@ -32,6 +33,5 @@ Projects are deep-linkable, e.g. `/#work/cane-and-brew`.
 ## Contact
 
 - Email: markus.ekerheim@gmail.com
-- Phone: +46 70-854 41 55
 
 // Markus Ekerheim

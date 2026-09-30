@@ -1414,7 +1414,7 @@ em {
 }
 
 .lab-card__media--pixel img {
-  object-position: 50% 72%;
+  object-position: 50% 50%;
   image-rendering: pixelated;
 }
 
@@ -2059,7 +2059,7 @@ em {
 
 .contact__links {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   gap: 1.5rem;
   margin-top: clamp(3rem, 8vw, 6rem);
   padding-top: 1.5rem;
