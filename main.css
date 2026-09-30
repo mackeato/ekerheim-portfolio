@@ -768,7 +768,7 @@ em {
 .marquee__track {
   display: flex;
   width: max-content;
-  align-items: baseline;
+  align-items: center;
   gap: 2rem;
   animation: marquee 38s linear infinite;
 }
